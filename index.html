@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/output.css">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbars/">
+    <title>Home</title>
+</head>
+<header class="tete">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">HotHothot</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05"
+                aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="navbar-toggler-icon"></i>
+        </button>
+        <nav class="collapse navbar-collapse" id="navbarsExample05">
+            <a href="index.html">Home</a>
+            <a href="settings.html">Parametrage</a>
+            <a href="history.html">History</a>
+            <a href="alerts.html">Alerts</a>
+            <a href="account.html">Account</a>
+            <a href="logout.html">Logout</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </nav>
+    <h1>Home</h1>
+</header>
+<main id="capteur">
+    <article>
+        <h2>Capteur intérieur</h2>
+        <img src="img/temp.jpg" alt="Compteur permettant de montrer la température intérieur de chez vous">
+        <p id="capteurData1"></p>
+    </article>
+    <article>
+        <h2>Capteur extérieur</h2>
+        <img src="img/temp.jpg" alt="Compteur permettant de montrer la température extérieur de chez vous">
+        <p id="capteurData2"></p>
+    </article>
+</main>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/Ajax_temp.js"></script>
+<footer>
+    <p>© 2021 HotHothot</p>
+</footer>
+</body>
+</html>

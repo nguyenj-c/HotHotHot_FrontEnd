@@ -1,0 +1,255 @@
+$font-stack:    Helvetica, sans-serif;
+$background: #faf67b;
+
+
+@import "bootstrap";
+
+@mixin bordered($color,$theme) {
+  background: $theme;
+  border-radius: 10px;
+}
+@mixin headerNav($width){
+  width: $width;
+  margin-bottom: 30px;
+  nav {
+    a {
+      display: block;
+      padding: 6px 12px;
+      text: {
+        decoration: none;
+        align: center;
+      }
+    }
+  }
+  h1{
+    text-align: center;
+    margin: 10px;
+  }
+}
+@mixin important-text($type) {
+  font-size: 25px;
+  margin: auto;
+  @if $type == lien {
+    color: $blue;
+  } @else if $type == titre {
+    color: $blue;
+  } @else if $type == souligne {
+    text-decoration: underline;
+  } @else if $type == gras {
+    font-weight: bold;
+  } @else if $type == label {
+    font-weight: bold;
+    padding: 15px 0px 15px 0px;
+  } @else {
+    @error "Unknown type #{$type}.";
+  }
+}
+body {
+  font: 100% $font-stack;
+  color: $black;
+  background: $background;
+}
+.tete {
+  @include headerNav(100%);
+}
+
+@mixin alertes() {
+  border: 1px solid Red;
+  padding: 10px;
+  color: red;
+}
+main{
+  ul{
+    list-style: none;
+    li{
+      border: 1px solid grey;
+      width: 75%;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+p#capteurData1 ,p#capteurData2{
+  position: relative;
+  top: -5em;
+  padding: 0px 20%;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+#capteur{
+  display: inline-block;
+  margin-left: 10%;
+  width: auto;
+  article {
+    display: inline-block;
+    margin-left: 60px;
+    margin-right: 60px;
+    }
+  h2{
+    text-align: center;
+  }
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 430px;
+  }
+}
+form{
+  display: grid;
+  width: 45%;
+  @include bordered(black, white);
+  padding: 10px 10px 10px 10px;
+  margin: 0px auto 50px;
+  input[type=submit]{
+    margin-top: 20px;
+    @include bordered(white, $blue);
+  }
+  a{
+    margin-top: 10px;
+  }
+}
+#historique {
+  summary {
+    @include alertes();
+  }
+  p{
+    margin-top: 15px;
+  }
+}
+label{
+  @include important-text(label);
+}
+footer{
+  margin-top: 10px;
+}
+@media screen and (max-width: 1050px){
+  #capteur {
+    display: inline-block;
+    margin-left: 0%;
+    img {
+      width: 350px;
+    }
+    article {
+      display: inline-block;
+      margin-right: 30px;
+      margin-left: 110px;
+    }
+  }
+  p,li{
+    font-size: 20px;
+  }
+  p#capteurData1 ,p#capteurData2{
+    padding: 0px 14%;
+    top: -5em;
+  }
+}
+@media screen and (max-width: 800px){
+  form{
+   width: 80%;
+    font-size: 35px;
+  }
+  label{
+    font-size: 35px;
+    margin: 5px auto 15px;
+  }
+  .tete{
+    nav{
+      a{
+        font-size: 35px;
+      }
+    }
+  }
+  header{
+    h1{
+      display: none;
+    }
+  }
+  #capteur {
+    display: inline-block;
+    margin: 0px 0% 5px;
+    img {
+      width: 300px;
+    }
+    article {
+      display: inline-block;
+      margin-right: 0px;
+      margin-left: 35px;
+    }
+  }
+  p,li{
+    font-size: 20px;
+  }
+  p#capteurData1 ,p#capteurData2{
+    padding: 0px 16%;
+    top: -4em;
+  }
+}
+@media screen and (max-width: 600px) {
+  form{
+    width: 85%;
+  }
+  header {
+    h1 {
+      display: none;
+    }
+  }
+  #capteur {
+    display: contents;
+    margin: 0px 25% 5px;
+    img {
+      width: 270px;
+    }
+    article {
+      margin-left: 70px;
+    }
+  }
+  .tete {
+    width: 100%;
+
+    nav {
+      a {
+        font-size: 25px;
+      }
+    }
+  }
+  p#capteurData1 ,p#capteurData2{
+    padding: 0px 18%;
+    top: -4em;
+  }
+}
+@media screen and (max-width: 400px) {
+  form{
+    width: 85%;
+  }
+  header {
+    h1 {
+      display: none;
+    }
+  }
+  #capteur {
+    margin: 0px 20% 5px;
+    img {
+      width: 300px;
+    }
+    article {
+      display: block;
+      margin-left: 0px;
+    }
+  }
+  .tete {
+    width: 100%;
+
+    nav {
+      a {
+        font-size: 25px;
+      }
+    }
+  }
+  p#capteurData1 ,p#capteurData2{
+    padding: 0px 20%;
+    top: -4em;
+  }
+}
